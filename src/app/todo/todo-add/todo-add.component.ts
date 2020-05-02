@@ -5,7 +5,7 @@ import { TodoStore } from '../todo.store';
   selector: 'app-todo-add',
   template: `
     <p>
-      <input type="text" [(ngModel)]="task" />
+      <input type="text" [(ngModel)]="description" />
       <button (click)="onSave()">Guardar</button>
     </p>
   `,
@@ -14,7 +14,7 @@ import { TodoStore } from '../todo.store';
 })
 export class TodoAddComponent implements OnInit {
 
-  task: string;
+  description: string;
 
   constructor(private store: TodoStore) { }
 
@@ -22,8 +22,8 @@ export class TodoAddComponent implements OnInit {
   }
 
   onSave() {
-    this.store.save({ description: this.task });
-    this.task = '';
+    this.store.save({ description: this.description, done: false });
+    this.description = '';
   }
 
 }

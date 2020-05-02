@@ -17,7 +17,9 @@ export class TodoStore {
   }
 
   markDone(task: Task) {
-    this.stateBS.next([...this.stateBS.value.filter(x => x.description !== task.description),
-      {...task, done: !task.done }]);
+    this.stateBS.next([
+      ...this.stateBS.value.filter(x => x.description !== task.description),
+      { ...task, done: !task.done }
+    ]);
   }
 }
