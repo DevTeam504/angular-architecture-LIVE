@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoStore } from '../todo.store';
 
 @Component({
   selector: 'app-todo-add',
   template: `
     <p>
-      todo-add works!
+      <input type="text" [(ngModel)]="task" />
+      <button (click)="onSave()">Guardar</button>
     </p>
   `,
   styles: [
@@ -12,9 +14,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoAddComponent implements OnInit {
 
-  constructor() { }
+  task: string;
+
+  constructor(private store: TodoStore) { }
 
   ngOnInit(): void {
+  }
+
+  onSave() {
+    this.store.save({ description: this.task });
+    this.task = '';
   }
 
 }

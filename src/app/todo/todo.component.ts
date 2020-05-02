@@ -14,7 +14,9 @@ import { TodoStore } from './todo.store';
 })
 export class TodoComponent implements OnInit {
 
-  constructor() { }
+  tasks$ = this.store.state$;
+
+  constructor(private store: TodoStore) { }
 
   ngOnInit(): void {
   }

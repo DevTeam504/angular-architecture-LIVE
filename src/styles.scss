@@ -1,0 +1,35 @@
+:root {
+  --primary: #5dc2b2;
+  --primary-dark: #21282d;
+}
+
+li {
+  color: var(--primary);
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+p {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  height: 28px;
+  outline: none;
+  font-size: 1em;
+  border: .5px var(--primary-dark) dashed;
+  padding-left: 10px;
+}
+
+button {
+  color: var(--primary);
+  background-color: var(--primary-dark);
+  border-radius: 2px;
+  height: 32px;
+  outline: none;
+  border: .5px var(--primary) dashed;
+  border-left: none;
+}
